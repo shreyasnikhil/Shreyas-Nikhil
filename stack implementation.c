@@ -11,20 +11,24 @@ int main()
 {
 	int choice,value;
 	printf("What would you like to perform?\n1.Push\n2.Pop\n3.Display\n4.Exit\n");
-	scanf("%d",&choice);
-	switch(choice)
+	while(choice!=4)
 	{
-		case 1: printf("Enter the number:\n");
-		        scanf("%d",&value);
-		        push(value);
-		        break;
-		case 2: pop();
-		        break;
-		case 3: display();
-		        break;
-		case 4: printf("Exit\n");
-		        break;
-		default: printf("Invalid Choice\n");
+		printf("Enter The Choice: \n");
+		scanf("%d",&choice);
+		switch(choice)
+	    {
+		   case 1: printf("Enter the number:\n");
+		           scanf("%d",&value);
+		           push(value);
+                   break;
+		   case 2: pop();
+		           break;
+		   case 3: display();
+		           break;
+		   case 4: printf("Exit\n");
+		           break;
+		   default: printf("Invalid Choice\n");
+	    }
 	}
 	return 0;
 }
@@ -45,8 +49,8 @@ void pop()
 		printf("Stack Underflow!\n");
 	else
 	{
-		top--;
 		printf("The deleted item is %d\n",stack[top] );
+		top--;
 	}
 }
 void display()
